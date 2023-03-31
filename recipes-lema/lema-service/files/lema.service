@@ -1,0 +1,10 @@
+[Unit]
+Description=LeMa runtime service
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /usr/libexec/lema-app.py -c /etc/lema/config.json -i /etc/lema/country-led-ids.json
+
+[Install]
+WantedBy=multi-user.target
